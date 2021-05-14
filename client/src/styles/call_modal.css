@@ -1,0 +1,89 @@
+.call_modal{
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 9;
+    background: #0008;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.call_box{
+    width: 100%;
+    max-width: 400px;
+    background: darkblue;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    color: white;
+    padding: 50px 0;
+    border-radius: 5px;
+    box-shadow: 0 0 5px darkblue;
+}
+.call_box h4, .call_box h6{
+    margin-top: 5px;
+}
+.call_menu{
+    min-width: 280px;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+}
+.call_menu button{
+    font-size: 2rem;
+    background: #eee;
+    padding: 15px;
+    border-radius: 50%;
+    cursor: pointer;
+    border: none;
+    outline: none;
+}
+.call_modal .timer{
+    transform: translateY(-15px);
+}
+.call_modal .show_video{
+    position: fixed;
+    top:0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    pointer-events: none;
+}
+.call_modal .other_video{
+    width: 100%;
+    height: 100%;
+}
+.call_modal .you_video{
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 300px;
+    max-height: 250px;
+    border-radius: 5px;
+    border: 1px solid crimson;
+    z-index: 10;
+}
+.call_modal .end_call{
+    position: absolute;
+    bottom: 100px;
+    left: 50%;
+    transform: translateX(-50%);
+    pointer-events: initial;
+    font-size: 2rem;
+    background: #eee;
+    padding: 15px;
+    border-radius: 50%;
+    cursor: pointer;
+    border: none;
+    outline: none;
+}
+.call_modal .time_video{
+    position: absolute;
+    bottom: 170px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: white;
+}
