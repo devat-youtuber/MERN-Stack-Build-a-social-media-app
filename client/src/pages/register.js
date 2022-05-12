@@ -9,10 +9,10 @@ const Register = () => {
     const history = useHistory()
 
     const initialState = { 
-        fullname: '', username: '', email: '', password: '', cf_password: '', gender: 'male'
+        fullname: '', username: '', email: '', password: '', cf_password: '', gender: 'male',category: 'buyer'
     }
     const [userData, setUserData] = useState(initialState)
-    const { fullname, username, email, password, cf_password } = userData
+    const { fullname, username, email, password, cf_password,category } = userData
 
     const [typePass, setTypePass] = useState(false)
     const [typeCfPass, setTypeCfPass] = useState(false)
@@ -24,18 +24,22 @@ const Register = () => {
     
     const handleChangeInput = e => {
         const { name, value } = e.target
+        console.log("hi");
+        console.log(e.target);
         setUserData({...userData, [name]:value})
     }
+    
 
     const handleSubmit = e => {
         e.preventDefault()
+        console.log(userData)
         dispatch(register(userData))
     }
-
+    
     return (
         <div className="auth_page">
             <form onSubmit={handleSubmit}>
-                <h3 className="text-uppercase text-center mb-4">V-Network</h3>
+                <h3 className="text-uppercase text-center mb-4">Business Door</h3>
 
                 <div className="form-group">
                     <label htmlFor="fullname">Full Name</label>
@@ -124,6 +128,22 @@ const Register = () => {
                     <label htmlFor="other">
                         Other: <input type="radio" id="other" name="gender"
                         value="other" onChange={handleChangeInput} />
+                    </label>
+                </div>
+                <div className="row justify-content-between mx-0 mb-1">
+                    <label htmlFor="seller">
+                        Seller: <input type="radio" id="seller" name="category"
+                        value="seller"  onChange={handleChangeInput} />
+                    </label>
+
+                    <label htmlFor="buyer">
+                        Buyer: <input type="radio" id="buyer" name="category"
+                        value="buyer" defaultChecked onChange={handleChangeInput} />
+                    </label>
+
+                    <label htmlFor="delivery_agent">
+                        Delivery Agent: <input type="radio" id="delivery_agent" name="category"
+                        value="delivery_agent" onChange={handleChangeInput} />
                     </label>
                 </div>
                 

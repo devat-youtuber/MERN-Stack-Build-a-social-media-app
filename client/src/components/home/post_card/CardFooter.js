@@ -86,6 +86,8 @@ const CardFooter = ({post}) => {
                     </Link>
 
                     <img src={Send} alt="Send" onClick={() => setIsShare(!isShare)} />
+
+                    
                 </div>
 
                 {
@@ -96,9 +98,11 @@ const CardFooter = ({post}) => {
                     :  <i className="far fa-bookmark"
                     onClick={handleSavePost} />
                 }
+                
                
+             
             </div>
-
+               
             <div className="d-flex justify-content-between">
                 <h6 style={{padding: '0 25px', cursor: 'pointer'}}>
                     {post.likes.length} likes

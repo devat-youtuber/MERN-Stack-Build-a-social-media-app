@@ -25,7 +25,9 @@ io.on('connection', socket => {
 // Create peer server
 ExpressPeerServer(http, { path: '/' })
 
-
+app.get('/',(req,res)=>{
+    res.json("apan aagya")
+})
 // Routes
 app.use('/api', require('./routes/authRouter'))
 app.use('/api', require('./routes/userRouter'))
